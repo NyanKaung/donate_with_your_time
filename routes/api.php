@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SongController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ArtistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/**--------------- songs api ------------ */
+Route::resource('songs', SongController::class);
+
+/**--------------- categories api ------------ */
+Route::resource('categories', CategoryController::class);
+
+/**--------------- artists api ------------ */
+Route::resource('artists', ArtistController::class);
