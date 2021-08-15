@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SongStoreRequest;
+use App\Http\Requests\SongUpdateRequest;
 use App\Models\Song;
 use Exception;
 use Illuminate\Http\Request;
@@ -49,7 +51,7 @@ class SongController extends Controller
      *  POST api/songs
      *  to create a new song
      */
-    public function store(Request $request)
+    public function store(SongStoreRequest $request)
     {
         try {
             $image = $this->uploadBase64($request->image);
@@ -92,7 +94,7 @@ class SongController extends Controller
      *  PUT/PATCH api/songs/{song}
      *  to update a song
      */
-    public function update(Request $request, Song $song)
+    public function update(SongUpdateRequest $request, Song $song)
     {
         try {
             $image = $this->uploadBase64($request->image);

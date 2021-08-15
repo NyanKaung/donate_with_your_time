@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArtistStoreRequest;
+use App\Http\Requests\ArtistUpdateRequest;
 use App\Models\Artist;
 use Exception;
 use Illuminate\Http\Request;
@@ -32,7 +34,7 @@ class ArtistController extends Controller
      *  POST api/artists
      *  to create a new artist
      */
-    public function store(Request $request)
+    public function store(ArtistStoreRequest $request)
     {
         try {
             $image = $this->uploadBase64($request->image);
@@ -71,7 +73,7 @@ class ArtistController extends Controller
      *  PUT/PATCH api/artists/{artist}
      *  to update a artist
      */
-    public function update(Request $request, Artist $artist)
+    public function update(ArtistUpdateRequest $request, Artist $artist)
     {
         try {
             $image = $this->uploadBase64($request->image);

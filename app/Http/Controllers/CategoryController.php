@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\CategoryUpdateRequest;
 use App\Models\Category;
 use Exception;
 use Illuminate\Http\Request;
@@ -30,7 +32,7 @@ class CategoryController extends Controller
      *  POST api/categories
      *  to create a new category
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
         try {
             $image = $this->uploadBase64($request->image);
@@ -67,7 +69,7 @@ class CategoryController extends Controller
      *  PUT/PATCH api/categories/{song}
      *  to update a category
      */
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
         try {
             $image = $this->uploadBase64($request->image);
