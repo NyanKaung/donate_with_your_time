@@ -6,7 +6,6 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Kreait\Firebase\Factory;
 
 class AuthController extends Controller {
   /**
@@ -64,7 +63,7 @@ class AuthController extends Controller {
   public function verifyToken(Request $request) {
     $token   = $request->token;
     $type    = $request->type;
-    $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
+    // $factory = (new Factory)->withServiceAccount(__DIR__ . '/firebase_credentials.json');
     $auth    = $factory->createAuth();
     try {
       $verifiedIdToken = $auth->verifyIdToken($token);
