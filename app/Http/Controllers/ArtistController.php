@@ -6,31 +6,19 @@ use Illuminate\Http\Request;
 
 class ArtistController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     /**
+     *  GET api/artists
+     *  to get all artists with pagination and sorting
      */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     *  POST api/artists
+     *  to create a new artist
      */
     public function store(Request $request)
     {
@@ -38,10 +26,8 @@ class ArtistController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  GET api/artists/{artist}
+     *  to show a artist
      */
     public function show($id)
     {
@@ -49,22 +35,8 @@ class ArtistController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  PUT/PATCH api/artists/{artist}
+     *  to update a artist
      */
     public function update(Request $request, $id)
     {
@@ -72,10 +44,8 @@ class ArtistController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * DELETE api/artists/{artist}
+     * to delete a artist
      */
     public function destroy($id)
     {

@@ -7,23 +7,18 @@ use Illuminate\Http\Request;
 class SongController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *  GET api/songs
+     *  to get all songs with pagination and sorting
      */
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
+     *  POST api/songs
+     *  to create a new song
      */
     public function store(Request $request)
     {
@@ -31,7 +26,8 @@ class SongController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *  GET api/songs/{song}
+     *  to show a song
      */
     public function show($id)
     {
@@ -39,15 +35,8 @@ class SongController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
+     *  PUT/PATCH api/songs/{song}
+     *  to update a song
      */
     public function update(Request $request, $id)
     {
@@ -55,7 +44,8 @@ class SongController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * DELETE api/songs/{song}
+     * to delete a song
      */
     public function destroy($id)
     {
