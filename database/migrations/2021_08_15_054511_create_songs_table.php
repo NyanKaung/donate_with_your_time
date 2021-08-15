@@ -20,7 +20,7 @@ class CreateSongsTable extends Migration
             $table->string('song_duration')->nullable();
             $table->foreignId('category_id')->constrained('categories')->nullable();
             $table->foreignId('artist_id')->constrained('artists')->nullable();
-            $table->boolean('today_playlist')->nullable();
+            $table->boolean('today_playlist')->default(0);
             $table->timestamp('released_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
